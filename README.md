@@ -57,9 +57,9 @@ so all what we need is :
     
 ### Basic principles     
    
-1) shall only write once 
-2) shall use interfaces 
-3) shall document
+1. shall only write once 
+2. shall use interfaces 
+3. shall document
 
 ### Show me the money (code)
 

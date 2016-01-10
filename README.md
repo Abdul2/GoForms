@@ -21,12 +21,12 @@ The architecture is basically based on the fact the the logic part  (GO func)
 ### Motivation 
 
 I wrote a form driven web app in Go to help a Dubia based business  (a friend's business) to manage their  property 
-portfolio and learned one or two things about the use GO interfaces, structs and templates to be able to reduce the amount of code to minimum.I will start with the architecture, write pseudo code first before writing actual code (in the first version i worked in 
+portfolio and learned one or two things about the use of GO interfaces, structs and templates to be able to reduce the amount of code to minimum.I will start with the architecture, write pseudo code first before writing actual code (in the first version i worked in 
 pilot mode and compromised on elegance and good design to get something out of the door). 
 
 ### Sharing 
 
-I will put out most of my code in the public domain but some of it is considered private. i will run two repos and the bulk of the work will be in the public domain.
+I will put out most of my code in the public domain but some of it is considered private. i will run two repos and the bulk of the work will be in the public repo.
 
 ### How will it work
 
@@ -41,19 +41,19 @@ it is simple
    
 - logic receives the structs and operate on their contents and depending on the stages it does one or all of the 
 following
- 
-1) validates the data
-2) changes the data
-3) writes data to database
-4) loads up template and marshal data to it
+
+1. validates the data
+2. changes the data
+3. writes data to database
+4. loads up template and marshal data to it
         
 so all what we need is :
 
-1) define data structure  - Go structs 
-2) define html templates  - Go driven html templates
-3) write logic to operate on data  - Go func
-4) figure out how we persist data - Go sql.DB
-5) write code to render forms - GO html/template
+1. define data structure  - Go structs 
+2. define html templates  - Go driven html templates
+3. write logic to operate on data  - Go func
+4. figure out how we persist data - Go sql.DB
+5. write code to render forms - GO html/template
     
 ### Basic principles     
    
@@ -61,6 +61,6 @@ so all what we need is :
 2) shall use interfaces 
 3) shall document
 
-## Show me the money (code)
+### Show me the money (code)
 
 .... will do but but let's do some thinking first

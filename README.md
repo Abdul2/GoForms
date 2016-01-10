@@ -38,6 +38,7 @@ it is simple
         - business specific (in my case Asset and Unit) 
         - form specific. Form specific structs drives the dynamic elements of the form and it is the mechanism by which the current logic tells the next piece of logic what to do. the logic manipulates the form structs fields. 
         - errors. to record error messages and display them back to users
+        - system user structs 
    
 - logic receives the structs and operate on their contents and depending on the stages it does one or all of the 
 following
@@ -61,6 +62,6 @@ so all what we need is :
 2. shall use interfaces 
 3. shall document
 
-### Show me the money (code)
+### Code samples
 
-.... will do but but let's do some thinking first
+.... watch this space 

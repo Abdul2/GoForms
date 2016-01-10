@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Goforms-public by Abdul2</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Goforms-public</h1>
+        <h2>Go driven Forms based Web Application </h2>
+        <a href="https://github.com/Abdul2/goforms-public" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h3>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h3>
+
+<p>This project will introduce an architecture to build a form driven GO application. The idea is that all form driven web apps consist of: </p>
+
+<ol>
+<li>Display </li>
+<li>Data</li>
+<li>logic </li>
+<li>Database</li>
+</ol>
+
+<p>The architecture is basically based on the fact the the logic part  (GO func)</p>
+
+<ol>
+<li>recieves the data</li>
+<li>changes it to inform the next step</li>
+<li>does some house keeping </li>
+<li>writes to database</li>
+</ol>
+
+<p><code>http req --&gt; server --&gt; router --&gt; func handler(logic....) --&gt; db</code></p>
+
+<h3>
+<a id="motivation" class="anchor" href="#motivation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Motivation</h3>
+
+<p>I wrote a form driven web app in Go to help a Dubia based business  (a friend's business) to manage their  property 
+portfolio and learned one or two things about the use of GO interfaces, structs and templates to be able to reduce the amount of code to minimum.I will start with the architecture, write pseudo code first before writing actual code (in the first version i worked in 
+pilot mode and compromised on elegance and good design to get something out of the door). </p>
+
+<h3>
+<a id="sharing" class="anchor" href="#sharing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sharing</h3>
+
+<p>I will put out most of my code in the public domain but some of it is considered private. i will run two repos and the bulk of the work will be in the public repo.</p>
+
+<h3>
+<a id="how-will-it-work" class="anchor" href="#how-will-it-work" aria-hidden="true"><span class="octicon octicon-link"></span></a>How will it work</h3>
+
+<p>it is simple </p>
+
+<ul>
+<li>Form is displayed/rendered </li>
+<li>
+<p>Form sends struct to logic </p>
+
+<ul>
+<li>struct types are
+
+<ul>
+<li>business specific (in my case Asset and Unit) </li>
+<li>form specific. Form specific structs drives the dynamic elements of the form and it is the mechanism by which the current logic tells the next piece of logic what to do. the logic manipulates the form structs fields. </li>
+<li>errors. to record error messages and display them back to users</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>logic receives the structs and operate on their contents and depending on the stages it does one or all of the 
+following</p></li>
+</ul>
+
+<ol>
+<li>validates the data</li>
+<li>changes the data</li>
+<li>writes data to database</li>
+<li>loads up template and marshal data to it</li>
+</ol>
+
+<p>so all what we need is :</p>
+
+<ol>
+<li>define data structure  - Go structs </li>
+<li>define html templates  - Go driven html templates</li>
+<li>write logic to operate on data  - Go func</li>
+<li>figure out how we persist data - Go sql.DB</li>
+<li>write code to render forms - GO html/template</li>
+</ol>
+
+<h3>
+<a id="basic-principles" class="anchor" href="#basic-principles" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic principles</h3>
+
+<p>1) shall only write once 
+2) shall use interfaces 
+3) shall document</p>
+
+<h3>
+<a id="show-me-the-money-code" class="anchor" href="#show-me-the-money-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Show me the money (code)</h3>
+
+<p>.... will do but but let's do some thinking first</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/Abdul2/goforms-public/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/Abdul2/goforms-public/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/Abdul2/goforms-public"></a> is maintained by <a href="https://github.com/Abdul2">Abdul2</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
